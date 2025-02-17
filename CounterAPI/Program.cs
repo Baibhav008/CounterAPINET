@@ -1,3 +1,4 @@
+using CounterAPI;
 using CounterAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +18,7 @@ builder.Services.AddScoped<ScopedService>();
 
 var app = builder.Build();
 
+app.UseMiddleware<LoggingMiddleware>();
 
 
 
